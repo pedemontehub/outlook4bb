@@ -11,6 +11,9 @@ caso nuevo escrito desde el correo.
   from file, o desde Microsoft 365 admin center > Integrated apps para todo el equipo).
 - `commands.html`, `commands.js`: lo que corre al presionar el botón. Lee el asunto, el remitente, la fecha y el texto
   del correo y abre New case con eso en la dirección: el correo no pasa por ningún servidor.
+- `marcador.html`: para Outlook en la web donde la empresa no deja instalar complementos. Se arrastra **👁 New case**
+  a la barra de favoritos y, con un correo abierto, un clic abre New case escrito
+  (<https://pedemontehub.github.io/outlook4bb/marcador.html>).
 - `icon-*.png`: el ojo de la marca.
 
 No hay secretos: solo la dirección de la app, que pide iniciar sesión igual.

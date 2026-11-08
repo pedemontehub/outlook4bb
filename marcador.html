@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Brew Brother · New case desde Outlook</title>
+<style>
+:root { --fondo:#ffffff; --texto:#1f2328; --tenue:#59636e; --linea:#d1d9e0; --oro:#D99500; --placa:#0B0B0B; }
+@media (prefers-color-scheme: dark) { :root { --fondo:#0d1117; --texto:#f0f6fc; --tenue:#9198a1; --linea:#30363d; } }
+body { margin:0; background:var(--fondo); color:var(--texto); font:16px/1.55 'Segoe UI',-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif; }
+main { max-width:640px; margin:0 auto; padding:40px 20px 56px; }
+.cabeza { display:flex; align-items:center; gap:12px; padding-bottom:16px; border-bottom:3px solid var(--oro); }
+.cabeza img { width:44px; height:44px; }
+.cabeza b { font-size:22px; }
+.cabeza b span { color:var(--oro); }
+h1 { font-size:24px; margin:28px 0 8px; }
+p, li { color:var(--texto); }
+.tenue { color:var(--tenue); font-size:14px; }
+.marcador { display:inline-flex; align-items:center; gap:8px; margin:18px 0 8px; padding:12px 20px; border-radius:8px;
+  background:var(--placa); color:#ffffff; font-weight:600; text-decoration:none; border:2px solid var(--oro); cursor:grab; }
+.marcador:active { cursor:grabbing; }
+ol { padding-left:22px; }
+li { margin:6px 0; }
+.nota { margin-top:28px; padding:12px 14px; border:1px solid var(--linea); border-radius:8px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="cabeza"><img src="icon-64.png" alt=""><b>Brew <span>Brother</span></b></div>
+  <h1>Un correo de Outlook como caso nuevo</h1>
+  <p>Arrastra este botón a tu barra de favoritos (si no la ves: <b>Ctrl + Shift + B</b>, en Mac <b>⌘ + Shift + B</b>):</p>
+  <a class="marcador" href="javascript:%28function%20%28%29%20%7B%20var%20APP%20%3D%20%27https%3A%2F%2Fbrewbrother101-1382170586462442.2.azure.databricksapps.com%27%3B%20var%20raiz%20%3D%20document.querySelector%28%27%5Baria-label%3D%22Reading%20Pane%22%20i%5D%2C%5Baria-label%3D%22Panel%20de%20lectura%22%20i%5D%27%29%20%7C%7C%20document.querySelector%28%27%5Brole%3D%22main%22%5D%27%29%20%7C%7C%20document.body%3B%20function%20texto%28el%29%20%7B%20return%20el%20%3F%20String%28el.innerText%20%7C%7C%20el.textContent%20%7C%7C%20%27%27%29.trim%28%29%20%3A%20%27%27%3B%20%7D%20var%20sel%20%3D%20String%28window.getSelection%20%3F%20window.getSelection%28%29%20%3A%20%27%27%29.trim%28%29%3B%20var%20cuerpos%20%3D%20raiz.querySelectorAll%28%27%5Baria-label%3D%22Message%20body%22%20i%5D%2C%5Baria-label%3D%22Cuerpo%20del%20mensaje%22%20i%5D%2C%5Brole%3D%22document%22%5D%27%29%3B%20var%20cuerpo%20%3D%20%27%27%3B%20for%20%28var%20i%20%3D%200%3B%20i%20%3C%20cuerpos.length%20%26%26%20%21cuerpo%3B%20i%2B%2B%29%20%7B%20cuerpo%20%3D%20texto%28cuerpos%5Bi%5D%29%3B%20%7D%20var%20asunto%20%3D%20texto%28raiz.querySelector%28%27%5Brole%3D%22heading%22%5D%5Baria-level%3D%222%22%5D%27%29%20%7C%7C%20raiz.querySelector%28%27%5Brole%3D%22heading%22%5D%27%29%29%3B%20var%20persona%20%3D%20raiz.querySelector%28%27span%5Btitle%2A%3D%22%40%22%5D%27%29%3B%20var%20nombre%20%3D%20texto%28persona%29%3B%20var%20de%20%3D%20persona%20%3F%20%28nombre%20%26%26%20nombre.indexOf%28%27%40%27%29%20%3C%200%20%3F%20nombre%20%2B%20%27%20%3C%27%20%2B%20persona.title%20%2B%20%27%3E%27%20%3A%20persona.title%29%20%3A%20%27%27%3B%20var%20b%20%3D%20sel%20%7C%7C%20cuerpo%3B%20if%20%28%21b%20%26%26%20%21asunto%29%20%7B%20alert%28%27Brew%20Brother%3A%20open%20an%20email%20in%20Outlook%20%28or%20select%20its%20text%29%20and%20click%20New%20case%20again.%27%29%3B%20return%3B%20%7D%20if%20%28%21asunto%29%20%7B%20asunto%20%3D%20b.split%28%27%5Cn%27%29%5B0%5D.slice%280%2C%20200%29%3B%20%7D%20var%20c%20%3D%200%3B%20if%20%28b.length%20%3E%2020000%29%20%7B%20b%20%3D%20b.slice%280%2C%2020000%29%3B%20c%20%3D%201%3B%20%7D%20var%20datos%20%3D%20new%20TextEncoder%28%29.encode%28JSON.stringify%28%7B%20s%3A%20asunto%2C%20f%3A%20de%2C%20d%3A%20%27%27%2C%20b%3A%20b%2C%20c%3A%20c%20%7D%29%29%3B%20function%20b64%28bytes%29%20%7B%20var%20s%20%3D%20%27%27%3B%20for%20%28var%20j%20%3D%200%3B%20j%20%3C%20bytes.length%3B%20j%2B%2B%29%20%7B%20s%20%2B%3D%20String.fromCharCode%28bytes%5Bj%5D%29%3B%20%7D%20return%20btoa%28s%29.replace%28%2F%5C%2B%2Fg%2C%20%27-%27%29.replace%28%2F%5C%2F%2Fg%2C%20%27_%27%29.replace%28%2F%3D%2B%24%2F%2C%20%27%27%29%3B%20%7D%20var%20ventana%20%3D%20window.open%28%27about%3Ablank%27%2C%20%27_blank%27%29%3B%20function%20ir%28x%29%20%7B%20var%20url%20%3D%20APP%20%2B%20%27%2Fnew-case.html%23correo%3D%27%20%2B%20x%3B%20if%20%28ventana%29%20%7B%20ventana.location.href%20%3D%20url%3B%20%7D%20else%20%7B%20location.href%20%3D%20url%3B%20%7D%20%7D%20if%20%28typeof%20CompressionStream%20%3D%3D%3D%20%27undefined%27%29%20%7B%20ir%28%27p%27%20%2B%20b64%28datos%29%29%3B%20return%3B%20%7D%20var%20cs%20%3D%20new%20CompressionStream%28%27deflate-raw%27%29%3B%20var%20w%20%3D%20cs.writable.getWriter%28%29%3B%20w.write%28datos%29%3B%20w.close%28%29%3B%20new%20Response%28cs.readable%29.arrayBuffer%28%29.then%28function%20%28ab%29%20%7B%20ir%28%27z%27%20%2B%20b64%28new%20Uint8Array%28ab%29%29%29%3B%20%7D%29%3B%20%7D%29%28%29%3B" title="Arrástrame a la barra de favoritos">👁 New case</a>
+  <p class="tenue">No hagas clic aquí: arrástralo. Funciona en Chrome y Edge con Outlook en la web.</p>
+  <h1>Cómo se usa</h1>
+  <ol>
+    <li>En Outlook en la web, abre el correo.</li>
+    <li>Haz clic en <b>👁 New case</b> en la barra de favoritos. Para llevar solo una parte del correo, selecciona ese texto antes.</li>
+    <li>Brew Brother abre <b>New case</b> con el asunto como título y quién lo mandó y el texto como descripción. Elige el
+      <b>Source</b> y créalo. Las @menciones del correo proponen tareas, como siempre.</li>
+  </ol>
+  <p class="nota tenue">El correo viaja en la dirección que se abre (después del <code>#</code>): no pasa por ningún servidor.
+    Los adjuntos no viajan: se arrastran a New case. Si el asunto o el remitente no salen bien, corrígelos en New case
+    y avísale a quien mantiene Brew Brother.</p>
+</main>
+</body>
+</html>
