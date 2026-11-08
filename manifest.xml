@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Brew Brother para Outlook: el boton "New case" en un correo abierto. Lo arma outlook/armar.py con la
+     direccion donde se publican estos archivos (https://pedemontehub.github.io/outlook4bb) y la de la app (https://brewbrother101-1382170586462442.2.azure.databricksapps.com). Pasos: outlook/README.md. -->
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+           xsi:type="MailApp">
+  <Id>0d20cb3f-b1d0-413e-a7de-9fe1c268fcd3</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Brew Brother</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="Brew Brother"/>
+  <Description DefaultValue="Turn the email you are reading into a new case in Brew Brother Control."/>
+  <IconUrl DefaultValue="https://pedemontehub.github.io/outlook4bb/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://pedemontehub.github.io/outlook4bb/icon-128.png"/>
+  <SupportUrl DefaultValue="https://brewbrother101-1382170586462442.2.azure.databricksapps.com/"/>
+  <AppDomains>
+    <AppDomain>https://brewbrother101-1382170586462442.2.azure.databricksapps.com</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.1"/>
+    </Sets>
+  </Requirements>
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://pedemontehub.github.io/outlook4bb/commands.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+  <Permissions>ReadItem</Permissions>
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.3">
+        <bt:Set Name="Mailbox"/>
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="MailHost">
+        <DesktopFormFactor>
+          <FunctionFile resid="Comandos.Url"/>
+          <ExtensionPoint xsi:type="MessageReadCommandSurface">
+            <OfficeTab id="TabDefault">
+              <Group id="bbGrupo">
+                <Label resid="Grupo.Label"/>
+                <Control xsi:type="Button" id="bbNuevoCaso">
+                  <Label resid="Boton.Label"/>
+                  <Supertip>
+                    <Title resid="Boton.Label"/>
+                    <Description resid="Boton.Ayuda"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icono.16"/>
+                    <bt:Image size="32" resid="Icono.32"/>
+                    <bt:Image size="80" resid="Icono.80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>nuevoCaso</FunctionName>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icono.16" DefaultValue="https://pedemontehub.github.io/outlook4bb/icon-16.png"/>
+        <bt:Image id="Icono.32" DefaultValue="https://pedemontehub.github.io/outlook4bb/icon-32.png"/>
+        <bt:Image id="Icono.80" DefaultValue="https://pedemontehub.github.io/outlook4bb/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="Comandos.Url" DefaultValue="https://pedemontehub.github.io/outlook4bb/commands.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="Grupo.Label" DefaultValue="Brew Brother"/>
+        <bt:String id="Boton.Label" DefaultValue="New case"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="Boton.Ayuda" DefaultValue="Open Brew Brother with a new case written from this email: the subject as its title and the text as its description, with who sent it and when. Choose the source and create it."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
